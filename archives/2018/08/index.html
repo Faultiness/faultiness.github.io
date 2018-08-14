@@ -26,6 +26,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -108,23 +115,23 @@
 
 
 
-  <meta name="description" content="新博客上线啦~">
+  <meta name="description" content="新博客上线啦">
 <meta property="og:type" content="website">
 <meta property="og:title" content="静夜独行">
-<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
+<meta property="og:url" content="https://faultiness.github.io/archives/2018/08/index.html">
 <meta property="og:site_name" content="静夜独行">
-<meta property="og:description" content="新博客上线啦~">
+<meta property="og:description" content="新博客上线啦">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="静夜独行">
-<meta name="twitter:description" content="新博客上线啦~">
+<meta name="twitter:description" content="新博客上线啦">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/08/"/>
+  <link rel="canonical" href="https://faultiness.github.io/archives/2018/08/"/>
 
 
 
@@ -238,7 +245,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">0</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">1</span></a>
   </li>
         
         
@@ -254,7 +261,7 @@
           
           <li class="menu-item menu-item-archives menu-item-active">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">1</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">2</span></a>
   </li>
 
       
@@ -322,7 +329,7 @@
         
           
         
-        嗯..! 目前共计 1 篇日志。 继续努力。
+        嗯..! 目前共计 2 篇日志。 继续努力。
       </span>
       
 
@@ -337,6 +344,43 @@
           <div class="collection-title">
             <h1 class="archive-year" id="archive-year-2018">2018</h1>
           </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/08/14/第一篇文章/" itemprop="url">
+              
+                <span itemprop="name">得得得</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-08-14T22:08:39+08:00"
+              content="2018-08-14" >
+          08-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
         
         
 
@@ -412,7 +456,7 @@
                 alt="Faultiness" />
             
               <p class="site-author-name" itemprop="name">Faultiness</p>
-              <p class="site-description motion-element" itemprop="description">新博客上线啦~</p>
+              <p class="site-description motion-element" itemprop="description">新博客上线啦</p>
           </div>
 
           
@@ -422,7 +466,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -430,6 +474,19 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -480,7 +537,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -525,6 +582,14 @@
 	
     
 
+    
+      <div>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b72ec0d8d9e0391" async = "async" ></script>
+</div>
+
+      </div>
     
   </div>
 
@@ -627,6 +692,75 @@
 
 
   
+
+  
+  <script>
+    
+    function showTime(Counter) {
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+        .done(function ({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "xC3hNxHW4T6AwhJVUgFhxNKz-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "xC3hNxHW4T6AwhJVUgFhxNKz-gzGzoHsz",
+                'X-LC-Key': "uBWtOM88dnQSSgAUIELwjdwR",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          if ($('.post-title-link').length >= 1) {
+            showTime(Counter);
+          }
+          
+        })
+    });
+  </script>
+
+
 
   
 
