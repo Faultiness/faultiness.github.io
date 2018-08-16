@@ -125,7 +125,12 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/nodejs.png">
 <meta property="og:image" content="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/git.png">
-<meta property="og:updated_time" content="2018-08-15T16:56:42.405Z">
+<meta property="og:image" content="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/creat_git_page.png">
+<meta property="og:image" content="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/ssh_git.png">
+<meta property="og:image" content="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/deploy_git.png">
+<meta property="og:image" content="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/creat_code_page.png">
+<meta property="og:image" content="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/deploy_coding.png">
+<meta property="og:updated_time" content="2018-08-16T06:45:35.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo建站小记">
 <meta name="twitter:description" content="照例，第一篇文章交给建站心得。😜  为什么选择Hexo在这之前一直用WordPress+VPS作为博客平台。但在使用中一直遇到：  WordPress频频爆出Error establishing a database connection “高额”服务器与流量费用 常被GFW误封IP  于是我便把目光投向了——Hexo🤗  优点：  纯静态博客，加载快。😀 没有数据库，数据迁移方便。😁">
@@ -359,7 +364,7 @@
                 
               
 
-              <time title="创建时间：2018-08-16 00:48:10 / 修改时间：00:56:42" itemprop="dateCreated datePublished" datetime="2018-08-16T00:48:10+08:00">2018-08-16</time>
+              <time title="创建时间：2018-08-16 00:48:10 / 修改时间：14:45:35" itemprop="dateCreated datePublished" datetime="2018-08-16T00:48:10+08:00">2018-08-16</time>
             
 
             
@@ -431,7 +436,7 @@
 <hr>
 <h1 id="为什么选择Hexo"><a href="#为什么选择Hexo" class="headerlink" title="为什么选择Hexo"></a>为什么选择Hexo</h1><p>在这之前一直用WordPress+VPS作为博客平台。但在使用中一直遇到：</p>
 <ul>
-<li>WordPress频频爆出<code>Error establishing a database connection</code></li>
+<li>WordPress频频爆出<strong>Error establishing a database connection</strong></li>
 <li>“高额”服务器与流量费用</li>
 <li>常被GFW误封IP</li>
 </ul>
@@ -440,12 +445,12 @@
 <li>优点： <ul>
 <li>纯静态博客，加载快。😀</li>
 <li>没有数据库，数据迁移方便。😁</li>
-<li>可部署至GitHub和CODING上，无需备案。(域名备案很烦的)😄</li>
+<li>可部署至GitHub和CODING上，无需备案。（域名备案很烦的）😄</li>
 <li>无需租用VPS，省钱更省心！😝<br><br></li>
 </ul>
 </li>
 <li>弱点<ul>
-<li>开发环境不如WordPress好，一些问题需要自己解决，也没有那么多插件库。</li>
+<li>开发环境不如WordPress好，一些问题需要自己解决。</li>
 <li>评论、查询等功能需第三方插件实现。</li>
 </ul>
 </li>
@@ -453,11 +458,21 @@
 <p>总而言之，Hexo还是一个不错的选择滴~ 就让我来回顾一下建站的整个过程吧。<br><a id="more"></a></p>
 <h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>笔者所用系统环境为Win 10，以下所有操作皆在此系统中执行。</p>
 <h2 id="安装NodeJs环境"><a href="#安装NodeJs环境" class="headerlink" title="安装NodeJs环境"></a>安装NodeJs环境</h2><p>打开<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">NodeJs的下载页面</a>，下载最新的安装包。（存档：<a href="https://mega.nz/#!ruwkwAbB!YXFqSkyzi9_xCydXCyCtORSKRAr6BlUjkuSQt7lzpfc" target="_blank" rel="noopener">node-v8.11.3-x64.msi</a>）<img src="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/nodejs.png" alt="nodejs_download"><br>按照提示安装好NodeJs环境后，在<code>Win + X</code>组合键弹出选项中选择<strong>Windows PowerShell</strong>，或使用快捷键<code>Win + R</code>在弹出窗口中输入<code>cmd</code>并回车进入<strong>命令行</strong>。分别输入并执行<code>node -v</code>与<code>npm -v</code>，若返回为程序版本号，则安装成功。（新版NodeJs已集成npm）<br><br></p>
-<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>打开<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git for Windows的下载页面</a>，下载最新的安装包。（存档：<a href="https://mega.nz/#!S6pE0IoA!E0_jAteTIuyftSJZEYROuwfyetqRT3GP7_aSMIjw8Ew" target="_blank" rel="noopener">Git-2.18.0-64-bit.exe</a>）<img src="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/git.png" alt="git_download"><br>同样按照提示安装好后（一直点下一步就好😂），在命令行中输入<code>git --version</code>并执行，若返回为程序版本号，则安装成功。<br><br></p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>打开<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git for Windows的下载页面</a>，下载最新的安装包。（存档：<a href="https://mega.nz/#!S6pE0IoA!E0_jAteTIuyftSJZEYROuwfyetqRT3GP7_aSMIjw8Ew" target="_blank" rel="noopener">Git-2.18.0-64-bit.exe</a>）<img src="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/git.png" alt="git_download"><br>同样按照提示安装好后（一直点下一步就好😂），在命令行中输入<code>git --version</code>并执行，若返回为程序版本号，则安装成功。<br><br></p>
 <h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>在命令行中执行<code>npm install -g hexo</code>并等待安装结束。新建一文件夹用于存放博客内容，在文件夹中按住<strong>Shift</strong>并点击右键，选择<strong>在此处打开PowerShell窗口</strong>。在弹出窗口中输入<code>hexo init</code>，Hexo会在此文件夹下建立网站所需全部文件。初始化完成后依次输入并执行<code>hexo g</code>与<code>hexo s</code>。打开浏览器输入网址<code>http://localhost:4000</code>就能看到你的博客啦~😁<br><br></p>
-<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>默认主题的确有点…不尽人意，我选择了NexT作为博客的新主题。在刚才的窗口中输入<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<p>打开目录下文件<code>_config.yml</code>，将<code>theme</code>项设置为<code>nest</code>。再次执行<code>hexo g</code>与<code>hexo s</code>后完成主题更换。<br>附：<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT主题使用文档</a><br><br></p>
-<h1 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h1><p>明天再写~ 睡觉咯</p>
+<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>默认主题的确有点…不尽人意，我选择了<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">NexT</a>作为博客的新主题。在刚才的窗口中输入并执行：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
+<p>打开目录下文件<code>_config.yml</code>，将<strong>theme</strong>项设置为<strong>nest</strong>。再次执行<code>hexo g</code>与<code>hexo s</code>后完成主题更换。<br>注：此处的<code>_config.yml</code>称为<strong>站点配置文件</strong>，在目录<code>themes/next/</code>下的<code>_config.yml</code>称为<strong>主题配置文件</strong>，注意区分。<br>附：<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT主题使用文档</a><br><br></p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><p><strong>—已配置过Git的朋友可以跳过本段😜—</strong><br>使用组合键<code>Win + X</code>并选择<strong>Windows PowerShell</strong>新建一命令行窗口，执行：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"&#123;your_GitHub_mail_address@example.com&#125;"</span></span><br></pre></td></tr></table></figure></p>
+<p>引号中内容替换为你注册GitHub所用邮箱地址。随后会提示输入passphrase，可直接回车跳过。继续依次执行：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent -s</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p>
+<p>若出现报错则尝试：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> `ssh-agent -s`</span><br><span class="line">ssh-add</span><br></pre></td></tr></table></figure></p>
+<p>随后拷贝生成的Key到剪切板中供下一步使用，执行：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p>打开你的GitHub页面，依次选择<strong>Settings -&gt; SSH and GPG Keys -&gt; New SSH Key</strong>，在窗口中输入SSH Key的名称并将剪切板中内容粘贴至Key对话框中，点击<strong>Add SSH Key</strong>完成添加。<br>回到命令行中执行：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p>出现欢迎语则完成Git配置。<br><br></p>
+<h2 id="部署至GitHub"><a href="#部署至GitHub" class="headerlink" title="部署至GitHub"></a>部署至GitHub</h2><p>打开你的GitHub项目页面，选择<strong>New repository</strong>新建一项目。设置项目名称为<code>{your_GitHub_name}.github.io</code>，点击<strong>Create repository</strong>完成创建。<img src="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/creat_git_page.png" alt="create_git_page"><br>打开刚创建的项目，找到下图位置，点击复制项目地址。<div align="center"><img src="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/ssh_git.png" alt="ssh_git"></div><br>打开<strong>站点配置文件</strong>，找到<strong>deploy</strong>项，设置如下：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> </span><br><span class="line"><span class="attr">    github:</span> <span class="string">&#123;your_GitHub_repository_address&#125;</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<p><div align="center"><img src="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/deploy_git.png" alt="deploy_git_setting"></div><br>回到Hexo目录下的命令行环境，依次执行<code>hexo g</code>和<code>hexo d</code>完成部署。稍等片刻后访问<code>https://{your_GitHub_name}.github.io</code>即可察看博客。<br><br></p>
+<h2 id="部署至CODING"><a href="#部署至CODING" class="headerlink" title="部署至CODING"></a>部署至CODING</h2><p>—关于如何配置CODING账号的SSH公钥，具体步骤请参考<strong>5.1 配置Git</strong>。—<br>注册并登陆CODING（可用GitHub账号登陆），选择<strong>新建项目</strong>，设置项目名称为<code>{your_CODING_name}.coding.me</code>，勾选<strong>公开源代码</strong>，点击<strong>新建项目</strong>完成创建。<img src="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/creat_code_page.png" alt="create_code_page"><br>打开<strong>站点配置文件</strong>，找到<strong>deploy</strong>项，增添设置：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">coding:</span> <span class="string">&#123;your_CODING_repository_address&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p><div align="center"><img src="https://vhexo.oss-cn-beijing.aliyuncs.com/1808/deploy_coding.png" alt="deploy_code_setting"></div><br>回到Hexo目录下的命令行环境，依次执行<code>hexo g</code>和<code>hexo d</code>完成部署。在项目页面依次选择<strong>代码 -&gt; Pages服务</strong>，启动应用。稍等片刻后访问<code>https://{your_CODING_name}.coding.me</code>即可察看博客。<br><br></p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>至此，你的Hexo博客就同时运行在这两个页面上了，每次更新并部署均会同时更新两个页面的内容。接下来会有一些插件的配置和优化访问速度的小记，希望能给你带来更多帮助~ 😋</p>
 
       
     </div>
@@ -655,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么选择Hexo"><span class="nav-number">1.</span> <span class="nav-text">为什么选择Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装环境"><span class="nav-number">2.</span> <span class="nav-text">安装环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装NodeJs环境"><span class="nav-number">2.1.</span> <span class="nav-text">安装NodeJs环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git"><span class="nav-number">2.2.</span> <span class="nav-text">安装git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换主题"><span class="nav-number">4.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置插件"><span class="nav-number">5.</span> <span class="nav-text">配置插件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么选择Hexo"><span class="nav-number">1.</span> <span class="nav-text">为什么选择Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装环境"><span class="nav-number">2.</span> <span class="nav-text">安装环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装NodeJs环境"><span class="nav-number">2.1.</span> <span class="nav-text">安装NodeJs环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git"><span class="nav-number">2.2.</span> <span class="nav-text">安装Git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换主题"><span class="nav-number">4.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署"><span class="nav-number">5.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Git"><span class="nav-number">5.1.</span> <span class="nav-text">配置Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署至GitHub"><span class="nav-number">5.2.</span> <span class="nav-text">部署至GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署至CODING"><span class="nav-number">5.3.</span> <span class="nav-text">部署至CODING</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
